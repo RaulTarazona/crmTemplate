@@ -1,4 +1,4 @@
-CREATE DATABASE campus;
+CREATE DATABASE database.sql;
 
 CREATE TABLE campers(
     id INT primary key AUTO_INCREMENT,
