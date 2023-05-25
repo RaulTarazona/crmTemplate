@@ -100,6 +100,7 @@ $all = $data ->selectAll();
             </td>
           </tr>
        
+        
           <?php 
           
          }

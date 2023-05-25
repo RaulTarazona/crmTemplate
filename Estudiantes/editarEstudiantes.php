@@ -25,6 +25,7 @@ if(isset($_POST['editar'])){
     $data-> setReview($_POST['review']);
     
 
+  
     $data->uptade();
 
     
