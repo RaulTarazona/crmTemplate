@@ -107,6 +107,7 @@ $all = $data ->selectAll();
 
           </tbody>
         
+        
         </table>
 
       </div>

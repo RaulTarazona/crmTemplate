@@ -31,6 +31,7 @@ if(isset($_POST['editar'])){
     echo"<script>alert('Los datos fueron Guardados satisfactoriamente');document.location='estudiantes.php'</script>";
  
 
+
 }
 
 ?>

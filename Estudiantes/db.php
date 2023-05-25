@@ -21,3 +21,4 @@ if(!defined("DB_PWD")){
     define("DB_PWD", "");
 }
 ?>
+
