@@ -139,10 +139,29 @@ class Config{
         }
     }
 
+
+    public function selectOne(){
+        try {
+            $stm= $this-> dbCnx->prepare('SELECT * FROM campers WHERE id=? ');
+            $stm-> execute([$this->id]);
+            return $stm->fetchAll(); 
+
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
+
+    public function uptade(){
+        try {
+            $stm = $this-> dbCnx ->prepare("UPDATE campers SET nombre= ?, direccion=?, logros=?,especialidad=?,skills=?,ser=?,ingles=?,review=? WHERE id= ? ");
+            $stm->execute([$this->nombre,$this->direccion, $this->logros,$this->especialidad,$this->skills,$this->ser,$this->ingles,$this->review, $this->id]);
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+       
+    }
+
 }
-
-
-
 
 ?>
 

@@ -96,6 +96,7 @@ $all = $data ->selectAll();
             <td><?php echo $value['review']?></td>
             <td>
               <a class="btn btn-danger" href="borrarEstudiantes.php?id=<?=$value['id']?>&req=delete">Borrar</a>
+              <a class="btn btn-warning" href="editarEstudiantes.php?id=<?=$value['id']?>">Actualizar</a>
             </td>
           </tr>
        
