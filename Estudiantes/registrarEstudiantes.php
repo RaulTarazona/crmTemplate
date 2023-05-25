@@ -20,6 +20,6 @@
 
     echo"<script>alert('Los datos fueron Guardados satisfactoriamente');document.location='estudiantes.php'</script>";}
  
- 
+
  
  ?>
