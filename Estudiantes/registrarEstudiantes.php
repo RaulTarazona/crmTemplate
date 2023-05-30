@@ -2,7 +2,7 @@
  
  if(isset($_POST['guardar'])){
 
-    require_once("config.php");
+    require_once("conectar.php");
 
     $config = new Config();
 

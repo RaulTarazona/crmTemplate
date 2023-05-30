@@ -1,5 +1,5 @@
 <?php 
-require_once("config.php");
+require_once("conectar.php");
 
 
 $data = new Config();
@@ -100,7 +100,7 @@ $all = $data ->selectAll();
             </td>
           </tr>
        
-        
+         
           <?php 
           
          }

@@ -1,8 +1,7 @@
 <?php 
 
-require_once("db.php");
-
-class Config{
+require_once("./Config/config.php");
+class Config extends Conexion{
 
     private $id;
     private $nombre;
@@ -15,8 +14,8 @@ class Config{
     private $review;
     protected $dbCnx;
 
-    public function __construct($id = 0, $nombre = "", $direccion = "", $logros= "",$especialidad= "",$skills=0,$ser=0,$ingles="",$review=0 ){
-
+    public function __construct($id = 0, $nombre = "", $direccion = "", $logros= "",$especialidad= "",$skills=0,$ser=0,$ingles="",$review=0,$dbCnx="" ){
+        
         $this->id = $id;
         $this->nombre = $nombre;
         $this->direccion = $direccion;
@@ -26,8 +25,9 @@ class Config{
         $this->ser = $ser;
         $this->ingles= $ingles;
         $this->review = $review;
+        parent::__construct($dbCnx);
 
-        $this->dbCnx = new PDO(DB_TYPE.":host=".DB_HOST.";dbname=".DB_NAME, DB_USER, DB_PWD, [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC] );
+    
 
     }
 

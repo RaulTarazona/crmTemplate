@@ -1,6 +1,6 @@
 <?php 
 
-require_once('config.php');
+require_once('conectar.php');
 
 
 $record = new Config();

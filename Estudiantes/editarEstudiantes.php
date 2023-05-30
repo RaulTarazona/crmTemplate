@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php 
-require_once("config.php");
+require_once("conectar.php");
 
 $data = new Config();
 $id = $_GET['id'];
