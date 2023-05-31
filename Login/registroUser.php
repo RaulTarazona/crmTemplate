@@ -1,5 +1,6 @@
 <?php 
 require_once("../Config/config.php");
+require_once("loginUser.php");
 
 class User extends Conexion{
    private $id;
@@ -58,11 +59,32 @@ class User extends Conexion{
         return $this->password;
     }
     
+    public function checkUSer($email){
+        try {
+            $stm = $this->dbCnx->prepare("SELECT * FROM users WHERE email = '$email' ");
+            $stm->execute();
+            if ($stm->fetchColumn()) {
+                return true;
+            }else {
+                return false;
+            }
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+    }
 
     public function insertData(){
         try {
             $stm = $this-> dbCnx -> prepare("INSERT INTO users(idCamper, email, username, password) values(?,?,?,?)");
-            $stm -> execute([$this->idCamper, $this->email, $this->username,md5( $this->password)]) ;   
+            $stm -> execute([$this->idCamper, $this->email, $this->username,md5($this->password)]) ;   
+
+            $login = new Login();
+            
+            $login->setEmail($_POST['email']);
+            $login->setPassword($_POST['password']);
+
+            $succes= $login->login();
+            
         } catch (Exception $e) {
             return $e->getMessage();
         }

@@ -10,9 +10,13 @@ if(isset($_POST['registrarse'])){
     $register->setUsername($_POST['username']);
     $register->setPassword($_POST['password']);
 
-    $register->insertData();
-
-    echo"<script>alert('Los datos fueron Guardados satisfactoriamente');document.location='loginRegister.php'</script>";
+    if($register->checkUSer($_POST['email'])){
+        echo"<script>alert('Ya esta creado');document.location='loginRegister.php'</script>";
+    }else {
+        $register->insertData();
+        echo"<script>alert('Los datos fueron Guardados satisfactoriamente');document.location='../Home/home.php'</script>";
+    }
+    
 }
 
 
